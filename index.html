@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MyCamp — Лагерь будущего</title>
+  <link rel="stylesheet" href="./styles/style.css">
+
+  <!-- Шрифт Rubik -->
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- AOS CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+<body>
+
+  <header data-aos="fade-down">
+    <div class="container">
+      <h1 class="logo">MyCamp</h1>
+      <nav>
+        <a href="#about">О нас</a>
+        <a href="#gallery">Галерея</a>
+        <a href="#pricing">Тарифы</a>
+        <a href="#form">Записаться</a>
+        <button class="btn-login">Вход</button>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero" data-aos="fade-up">
+    <h2>Лагерь будущего</h2>
+    <p>Готовая система интересных школьных смен</p>
+    <a href="#form" class="btn">Узнать больше</a>
+    <div class="countdown">До старта смены: <span id="timer">36 дней</span></div>
+  </section>
+
+  <section id="about" class="features">
+    <div class="card" data-aos="fade-right">
+      <h3>Что входит</h3>
+      <ul>
+        <li>5 смен: лидерство, наука, английский, творчество и будущее</li>
+        <li>Карточки заданий и активностей</li>
+        <li>Методичка и расписание для учителя</li>
+        <li>Таблица достижений команд</li>
+        <li>Поддержка: видео, инструкции, сопровождение</li>
+      </ul>
+    </div>
+
+    <div class="card" data-aos="fade-up">
+      <h3>Почему это удобно</h3>
+      <ul>
+        <li>Работает даже в школах без техники</li>
+        <li>Для детей 7–13 лет</li>
+        <li>Базовый и расширенный пакеты</li>
+        <li>Масштабируется на любую школу</li>
+      </ul>
+    </div>
+
+    <div class="card quote" data-aos="fade-left">
+      <blockquote>“Я могу. У меня получается. Я не боюсь быть собой.”</blockquote>
+      <p>— Мамедов Руслан, автор проекта ,7 класс<br>— Рахматулла Максат, автор кода , 7 класс</p>
+    </div>
+  </section>
+
+  <section id="gallery" class="gallery" data-aos="fade-up">
+    <h2>Фотогалерея</h2>
+    <div class="photos">
+      <img src="./img/images.jfif" alt="Фото 1">
+      <img src="./img/s_summercamp_0-750x500.jpg" alt="Фото 2">
+      <img src="./img/w5fe174wv4wt7ag3pf401myr779qq5hg.jpg" alt="Фото 3">
+    </div>
+  </section>
+
+  <section id="pricing" class="pricing" data-aos="fade-up">
+    <h2>Тарифы</h2>
+    <div class="pricing-cards">
+      <div class="pricing-card">
+        <h3>Базовый</h3>
+        <div class="price">15 000₽</div>
+        <ul>
+          <li>7 дней</li>
+          <li>Питание</li>
+          <li>Программа</li>
+        </ul>
+        <a href="#form" class="btn">Выбрать</a>
+      </div>
+      <div class="pricing-card premium">
+        <h3>Премиум</h3>
+        <div class="price">25 000₽</div>
+        <ul>
+          <li>14 дней</li>
+          <li>Форма</li>
+          <li>Подарки</li>
+          <li>Фотоальбом</li>
+        </ul>
+        <a href="#form" class="btn">Выбрать</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="form" class="form-section" data-aos="fade-up">
+    <h2>Оставьте заявку</h2>
+    <form action="https://formspree.io/f/xpzgrvbo" method="POST">
+      <input type="text" name="name" placeholder="Ваше имя" required>
+      <input type="email" name="email" placeholder="Ваш e-mail" required>
+      <textarea name="message" placeholder="Ваше сообщение"></textarea>
+      <button type="submit">Отправить</button>
+    </form>
+  </section>
+
+  <footer data-aos="fade-up">
+    <div class="footer-container">
+      <div class="footer-left">
+        <p>© 2025 MyCamp. Сделано с идеей.</p>
+        <p>👥 Посетителей: <span id="visit-counter">0</span></p>
+      </div>
+      <div class="footer-right">
+        <a href="https://instagram.com" target="_blank">📷 Instagram</a>
+        <a href="https://wa.me/1234567890" target="_blank">💬 WhatsApp</a>
+        <a href="https://maps.google.com/?q=школа" target="_blank">📍 Локация</a>
+        <a href="tel:+71234567890">📞 +7 123 456-78-90</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- AOS инициализация -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 1000 });
+    // Счётчик просмотров
+    let views = localStorage.getItem("views") || 0;
+    views++;
+    localStorage.setItem("views", views);
+    document.getElementById("visit-counter").textContent = views;
+  </script>
+
+</body>
+</html>
