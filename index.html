@@ -82,22 +82,46 @@
     <div class="pricing-cards">
       <div class="pricing-card">
         <h3>Базовый</h3>
-        <div class="price">15 000₽</div>
+        <div class="price">15 000тг</div>
         <ul>
-          <li>7 дней</li>
-          <li>Питание</li>
-          <li>Программа</li>
+          <li>10 Дней</li>
+          <li>1 Возрастная группа</li>
+          <li>Выбранная смена</li>
+          <li>Карточки с заданиями</li>
+          <li>Методичка</li>
         </ul>
         <a href="#form" class="btn">Выбрать</a>
       </div>
       <div class="pricing-card premium">
-        <h3>Премиум</h3>
-        <div class="price">25 000₽</div>
+        <h3>Стандарт</h3>
+        <div class="price">25 000тг</div>
         <ul>
-          <li>14 дней</li>
-          <li>Форма</li>
-          <li>Подарки</li>
-          <li>Фотоальбом</li>
+          <li>10 дней</li>
+          <li>1 Возрастная группа</li>
+          <li>Выбранная смена</li>
+          <li>Карточки с заданиями</li>
+          <li>Методичка</li>
+          <li>Визуалы</li>
+          <li>Таблицы Лидеров</li>
+          <li>Шаблоны</li>
+        </ul>
+        <a href="#form" class="btn">Выбрать</a>
+      </div>
+      <div class="pricing-card premium">
+        <h3>PRO</h3>
+        <div class="price">40 000тг</div>
+        <ul>
+          <li>10 дней</li>
+          <li>1 Возрастная группа</li>
+          <li>Выбранная смена</li>
+          <li>Карточки с заданиями</li>
+          <li>Методичка</li>
+          <li>Визуалы</li>
+          <li>Таблицы Лидеров</li>
+          <li>Шаблоны</li>
+          <li>АДАПТАЦИЯ ПОД ШКОЛУ</li>
+          <li>ВИДЕОПОМОЩЬ</li>
+          <li>ПОДДЕРЖКА</li>
         </ul>
         <a href="#form" class="btn">Выбрать</a>
       </div>
@@ -121,10 +145,10 @@
         <p>👥 Посетителей: <span id="visit-counter">0</span></p>
       </div>
       <div class="footer-right">
-        <a href="https://instagram.com" target="_blank">📷 Instagram</a>
-        <a href="https://wa.me/1234567890" target="_blank">💬 WhatsApp</a>
+        <a href="https://instagram.com/ruslanchik5733" target="_blank">📷 Instagram</a>
+        <a href="https://wa.me/+77076932425" target="_blank">💬 WhatsApp</a>
         <a href="https://maps.google.com/?q=школа" target="_blank">📍 Локация</a>
-        <a href="tel:+71234567890">📞 +7 123 456-78-90</a>
+        <a href="tel:+77076932425">📞 +7 707 693 24 25</a>
       </div>
     </div>
   </footer>
@@ -141,4 +165,63 @@
   </script>
 
 </body>
+
+<script>
+  const form = document.querySelector('form');
+  const submitButton = form.querySelector('button[type="submit"]');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    // Блокируем кнопку и меняем текст
+    submitButton.disabled = true;
+    submitButton.textContent = 'Отправляем...';
+
+    const name = form.querySelector('input[type="text"]').value.trim();
+    const email = form.querySelector('input[type="email"]').value.trim();
+    const message = form.querySelector('textarea').value.trim();
+
+    const text = `📩 Новая заявка!%0A👤 Имя: ${name}%0A📧 Email: ${email}%0A📝 Сообщение: ${message}`;
+
+    const TOKEN = '7853366288:AAEvLqmsaL5GMPS5mFW2Wajs-z1c_IxX7nc';
+    const CHAT_ID = '5195986133';
+    const URL = `https://api.telegram.org/bot${TOKEN}/sendMessage?chat_id=${CHAT_ID}&text=${text}`;
+
+    try {
+      const response = await fetch(URL);
+      if (response.ok) {
+        showPopup('✅ Заявка успешно отправлена!');
+        form.reset();
+      } else {
+        showPopup('❌ Ошибка при отправке. Попробуйте позже.');
+      }
+    } catch (error) {
+      showPopup('❌ Ошибка сети. Попробуйте позже.');
+    } finally {
+      submitButton.disabled = false;
+      submitButton.textContent = 'Отправить';
+    }
+  });
+
+  function showPopup(message) {
+    const popup = document.createElement('div');
+    popup.textContent = message;
+    popup.style.position = 'fixed';
+    popup.style.top = '20px';
+    popup.style.right = '20px';
+    popup.style.padding = '15px 20px';
+    popup.style.background = '#2563eb';
+    popup.style.color = 'white';
+    popup.style.borderRadius = '12px';
+    popup.style.boxShadow = '0 8px 20px rgba(0,0,0,0.2)';
+    popup.style.zIndex = '10000';
+    popup.style.fontWeight = 'bold';
+    document.body.appendChild(popup);
+
+    setTimeout(() => {
+      popup.remove();
+    }, 3000);
+  }
+</script>
+
 </html>
