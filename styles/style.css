@@ -39,6 +39,7 @@ header {
   font-size: 22px;
   color: #2a60ff;
   font-weight: 700;
+  position: relative;
 }
 
 nav a {
