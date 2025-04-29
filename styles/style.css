@@ -408,7 +408,7 @@ button:hover {
 
 .blink-link {
   display: inline-block;
-  background-color: #ffc107; /* жёлтый */
+  background-color: #ffc107;
   color: #000;
   font-weight: bold;
   padding: 12px 24px;
@@ -419,15 +419,15 @@ button:hover {
 }
 
 .blink-link:hover {
-  animation: none; /* отключить мигание при наведении */
+  animation: none;
   background-color: #e0a800;
   color: #000;
 }
 
-/* Анимация мигания */
 @keyframes blink {
   0% { opacity: 1; }
   50% { opacity: 0.6; }
   100% { opacity: 1; }
 }
+
 
