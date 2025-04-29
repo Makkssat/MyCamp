@@ -315,6 +315,8 @@ nav a:hover {
     flex: 1 1 300px;
     max-width: 380px;
     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    display: flex; /* Для выравнивания кнопки */
+    flex-direction: column; /* Для размещения элементов сверху вниз */
 }
 
 .pricing-card:hover {
@@ -370,6 +372,25 @@ nav a:hover {
     color: #38b000;
     position: absolute;
     left: 0;
+}
+
+.pricing-card a.btn-price {
+    margin-top: auto; /* Прижимаем кнопку к низу */
+    text-align: center; /* Центрируем текст кнопки */
+    display: block; /* Чтобы занимала всю ширину контейнера */
+    background: #3b82f6;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.pricing-card a.btn-price:hover {
+    background: #2563eb;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
 }
 
 /* Форма */
@@ -431,37 +452,46 @@ nav a:hover {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    gap: 40px;
+    align-items: center; /* Выровняем элементы по вертикали */
+    gap: 20px; /* Уменьшим отступ между элементами */
+}
+
+.footer-left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.footer-left .logo a {
+    font-size: 24px; /* Уменьшим размер логотипа в футере */
+    font-weight: 700;
+    color: #fcd34d; /* Вернем желтый цвет логотипу */
+    text-decoration: none;
+    margin-bottom: 10px; /* Добавим отступ снизу от логотипа */
 }
 
 .footer-left p {
     opacity: 0.8;
-    margin-bottom: 10px;
-}
-
-.footer-left blockquote {
-    margin: 20px 0;
-    font-style: italic;
-    opacity: 0.9;
-    border-left: 3px solid #fcd34d; /* Добавим акцентную линию */
-    padding-left: 15px;
+    margin-bottom: 5px; /* Уменьшим отступ снизу от параграфов */
+    font-size: 14px; /* Уменьшим размер текста */
 }
 
 .footer-right {
     display: flex;
-    flex-direction: column;
-    gap: 10px;
+    gap: 15px; /* Отступ между иконками/ссылками */
+    font-size: 14px; /* Уменьшим размер текста контактов */
 }
 
 .footer-right a {
     color: #fcd34d;
     text-decoration: none;
     font-weight: bold;
-    transition: color 0.3s ease-in-out;
+    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out; /* Добавим transition для transform */
 }
 
 .footer-right a:hover {
     color: #fff;
+    transform: scale(1.1); /* Увеличим масштаб при наведении */
 }
 
 /* Адаптивность */
@@ -528,9 +558,15 @@ nav a:hover {
         text-align: center;
     }
 
-    .footer-left,
-    .footer-right {
+    .footer-left {
         align-items: center;
+        margin-bottom: 20px;
+    }
+
+    .footer-right {
+        flex-direction: row; /* Контакты в одну линию на мобильных */
+        gap: 10px;
+        justify-content: center; /* Центрируем контакты на мобильных */
     }
 }
 
