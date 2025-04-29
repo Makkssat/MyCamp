@@ -389,21 +389,39 @@ nav a:hover {
   }
 }
 
-/* Общий стиль для всех кнопок */
-.btn,
-.btn-login,
-button {
-  transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
-  cursor: pointer;
+.btn {
+  background: #facc15;
+  color: #1e3a8a;
+  padding: 12px 25px;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 1;
 }
 
-/* Эффект при наведении */
-.btn:hover,
-.btn-login:hover,
-button:hover {
+.btn:hover {
+  background: #eab308;
+  color: white;
   transform: scale(1.05);
-  background-color: #eab308; /* Яркий жёлтый */
-  color: #fff;
+}
+
+.btn.pulse {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(250, 204, 21, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(250, 204, 21, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(250, 204, 21, 0);
+  }
 }
 
 
