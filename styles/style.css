@@ -1,312 +1,390 @@
-/* Основные стили */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-    margin: 0;
-    font-family: 'Rubik', sans-serif;
-    background-color: #f0f6ff;
-    color: #1a1a1a;
-    scroll-behavior: smooth;
+  font-family: 'Rubik', sans-serif;
+  line-height: 1.6;
+  background-color: #f9fafb;
+  color: #111827;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+}
+
+header {
+  background-color: #1e3a8a;
+  color: white;
+  padding: 15px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 700;
+  margin-right: auto;
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: #facc15;
+}
+
+.btn-login {
+  background: #facc15;
+  color: #1e3a8a;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-login:hover {
+  background: #eab308;
+}
+
+/* Hero section */
+.hero {
+  background: linear-gradient(to right, #1e3a8a, #2563eb);
+  color: white;
+  padding: 100px 20px;
+  text-align: center;
+}
+
+.hero h2 {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
+.btn {
+  background: #facc15;
+  color: #1e3a8a;
+  padding: 12px 25px;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #eab308;
+}
+
+.countdown {
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+/* Features */
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  padding: 60px 20px;
+  background: #fff;
+}
+
+.features .card {
+  background: #e0f2fe;
+  padding: 25px;
+  border-radius: 12px;
+  flex: 1 1 300px;
+  max-width: 350px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.features .card h3 {
+  margin-bottom: 15px;
+}
+
+.features .card ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+/* Направления */
+.nap {
+  text-align: center;
+  font-size: 36px;
+  padding-top: 60px;
+  margin-bottom: 20px;
+}
+
+.camp-directions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
+}
+
+.direction-card {
+  background: #f1f5f9;
+  padding: 20px;
+  border-radius: 16px;
+  flex: 1 1 240px;
+  text-align: center;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.07);
+  position: relative;
+  transition: transform 0.3s;
+}
+
+.direction-card:hover {
+  transform: translateY(-5px);
+}
+
+.badge {
+  position: absolute;
+  top: -12px;
+  left: 12px;
+  background: #3b82f6;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 12px;
+  font-weight: bold;
+}
+
+.icon {
+  font-size: 40px;
+  margin: 20px 0;
+}
+
+.more {
+  font-size: 14px;
+  color: #6b7280;
+  font-style: italic;
+}
+
+.desc {
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+/* Галерея */
+.gallery {
+  padding: 60px 20px;
+  background: #fff;
+  text-align: center;
+}
+
+.gallery h2 {
+  font-size: 36px;
+  margin-bottom: 30px;
+}
+
+.photos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+}
+
+.photos img {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.photos img:hover {
+  transform: scale(1.05);
+}
+
+/* Тарифы */
+.pricing {
+  padding: 60px 20px;
+  background: #e0f2fe;
+  text-align: center;
+}
+
+.tarif {
+  font-size: 36px;
+  margin-bottom: 30px;
+}
+
+.pricing-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.pricing-card {
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  flex: 1 1 280px;
+  max-width: 350px;
+}
+
+.pricing-card h3 {
+  margin-bottom: 10px;
+}
+
+.pricing-card .price {
+  font-size: 28px;
+  font-weight: bold;
+  color: #2563eb;
+  margin-bottom: 15px;
+}
+
+.pricing-card ul {
+  list-style: none;
+  text-align: left;
+  padding: 0;
+  margin: 0 0 20px 0;
+}
+
+.pricing-card ul p {
+  font-weight: bold;
+}
+
+.pricing-card hr {
+  margin: 5px 0 10px 0;
+}
+
+/* Форма */
+.form-section {
+  padding: 60px 20px;
+  text-align: center;
+  background: #f9fafb;
+}
+
+.form-section form {
+  max-width: 500px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-section input,
+.form-section textarea {
+  padding: 10px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.form-section button {
+  padding: 12px;
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.form-section button:hover {
+  background: #1e40af;
+}
+
+/* Footer */
+.footer {
+  background: #1e3a8a;
+  color: white;
+  padding: 40px 20px;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.footer-left {
+  flex: 1 1 300px;
+}
+
+.footer-left blockquote {
+  margin: 15px 0;
+  font-style: italic;
+  opacity: 0.8;
+}
+
+.footer-right {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1 1 200px;
+}
+
+.footer-right a {
+  color: #facc15;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.footer-right a:hover {
+  color: #fcd34d;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  nav {
+    flex-wrap: wrap;
+    justify-content: center;
   }
-  
-  h1, h2, h3 {
-    margin: 0;
-    font-weight: 700;
-  }
-  
-  ul {
-    padding-left: 20px;
-  }
-  
-  .container {
-    max-width: 1200px;
-    margin: auto;
-    padding: 0 20px;
-  }
-  
-  /* Хедер */
-  header {
-    background-color: #ffffff;
-    padding: 15px 30px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    display: flex;
-    justify-content: space-between;
+
+  .features {
+    flex-direction: column;
     align-items: center;
   }
-  
-  .logo {
-    position: absolute;
-    top: 10px;      /* отступ сверху */
-    left: 20px;    /* отступ справа */
-    height: 50px;   /* например, высота логотипа */
-    width: auto;    /* чтобы не искажать пропорции */
-    z-index: 1000;  /* чтобы лого было поверх других элементов */
-    color: #2a60ff;
-  }
-  
-  nav a {
-    margin: 0 15px;
-    text-decoration: none;
-    color: #2a2a2a;
-    font-weight: 500;
-    transition: color 0.3s ease;
-  }
-  
-  nav a:hover {
-    color: #2a60ff;
-  }
-  
-  .btn-login {
-    padding: 8px 18px;
-    background: linear-gradient(135deg, #2a60ff, #004de6);
-    color: white;
-    border: none;
-    border-radius: 12px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: all 0.4s ease;
-    box-shadow: 0 4px 12px rgba(42, 96, 255, 0.3);
-  }
-  
-  .btn-login:hover {
-    transform: scale(1.15);
-    background: #0033cc;
-    box-shadow: 0 6px 20px rgba(0, 51, 204, 0.5);
-  }
-  
-  /* Герой */
-  .hero {
-    text-align: center;
-    padding: 100px 20px 80px;
-    background: linear-gradient(to top, #dbeafe, #eff6ff);
-  }
-  
-  .hero h2 {
-    font-size: 48px;
-    color: #1e3a8a;
-  }
-  
-  .hero p {
-    font-size: 20px;
-    color: #1e40af;
-    margin-bottom: 20px;
-  }
-  
-  .btn {
-    background-color: #2563eb;
-    color: #fff;
-    padding: 14px 28px;
-    border-radius: 30px;
-    font-weight: bold;
-    text-decoration: none;
-    transition: all 0.4s ease;
-    box-shadow: 0 4px 10px rgba(37, 99, 235, 0.3);
-    display: inline-block;
-  }
-  
-  .btn:hover {
-    transform: scale(1.15);
-    background-color: #1e40af;
-    box-shadow: 0 8px 20px rgba(30, 64, 175, 0.4);
-  }
-  
-  .countdown {
-    margin-top: 20px;
-    font-size: 18px;
-    color: #1e40af;
-  }
-  
-  /* Особенности */
-  .features {
-    padding: 60px 40px;
-    display: grid;
-    gap: 30px;
-    background: #fff;
-  }
-  
-  .card {
-    background-color: #f9fafb;
-    border-radius: 16px;
-    padding: 30px;
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
-  }
-  
-  .card h3 {
-    margin-bottom: 15px;
-  }
-  
-  .card ul li {
-    margin-bottom: 8px;
-  }
-  
-  .quote blockquote {
-    font-style: italic;
-    border-left: 4px solid #2563eb;
-    padding-left: 16px;
-    color: #1e3a8a;
-  }
-  
-  /* Галерея */
-  .gallery {
-    padding: 40px 20px;
-    background: #eef4ff;
-    text-align: center;
-  }
-  
-  .photos {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-  }
-  
-  .photos img {
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-  }
-  
-  .photos img:hover {
-    transform: scale(1.05);
-  }
-  
-  /* Тарифы */
-  .pricing {
-    padding: 60px 20px;
-    background-color: #ffffff;
-    text-align: center;
-  }
-  
-  .pricing-cards {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 30px;
-    margin-top: 30px;
-  }
-  
-  .pricing-card {
-    background: #f3f4f6;
-    border-radius: 16px;
-    padding: 30px;
-    width: 280px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
-  }
-  
-  .pricing-card h3 {
-    font-size: 24px;
-    margin-bottom: 10px;
-  }
-  
-  .pricing-card .price {
-    font-size: 32px;
-    color: #2563eb;
-    font-weight: bold;
-    margin-bottom: 15px;
-  }
-  
-  .pricing-card ul {
-    list-style: none;
-    padding: 0;
-    margin: 0 0 20px 0;
-  }
-  
-  .pricing-card ul li {
-    margin: 8px 0;
-  }
-  
-  .pricing-card .btn {
-    margin-top: 10px;
-  }
-  
-  /* Форма */
-  .form-section {
-    padding: 60px 20px;
-    background-color: #ffffff;
-    text-align: center;
-  }
-  
-  form {
-    display: flex;
+
+  .pricing-cards,
+  .camp-directions {
     flex-direction: column;
-    gap: 15px;
-    max-width: 400px;
-    margin: auto;
+    align-items: center;
   }
-  
-  form input, form textarea {
-    padding: 12px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-    font-family: 'Rubik', sans-serif;
-  }
-  
-  form button {
-    background: #2563eb;
-    color: white;
-    border: none;
-    padding: 12px;
-    border-radius: 10px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.3s ease;
-  }
-  
-  form button:hover {
-    background: #1e40af;
-    transform: scale(1.05);
-  }
-  
-  /* Подвал */
-  footer {
-    background-color: #1e3a8a;
-    color: white;
-    padding: 30px 20px;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-  }
-  
+
   .footer-container {
-    max-width: 1200px;
-    margin: auto;
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    flex-wrap: wrap;
+    flex-direction: column;
+    text-align: center;
   }
-  
-  .footer-left p, .footer-right a {
-    margin: 5px 0;
-  }
-  
-  .footer-right a {
-    color: white;
-    text-decoration: none;
-    margin-left: 100px;
-    transition: color 0.3s ease;
-  }
-  
-  .footer-right a:hover {
-    color: #a3bffa;
-  }
-  
-  .inst {
-    width: 2%;
-  }
-
-  .wh {
-    width: 2%;
-  }
-
-  .l {
-    width: 2%;
-  }
-
-  .t {
-    width: 2%;
-  }
+}
