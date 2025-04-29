@@ -96,15 +96,21 @@ nav a:hover {
     color: #fcd34d; /* Более светлый оттенок желтого */
 }
 
-.btn {
-  transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
-  cursor: pointer;
+.btn-primary { /* Новый класс для основной кнопки */
+    background: #fcd34d;
+    color: #1e3a8a;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.btn:hover {
-  transform: scale(1.05);
-  background-color: #eab308; /* Яркий жёлтый */
-  color: #fff;
+.btn-primary:hover {
+    background: #eab308;
+    color: white;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
 }
 
 /* Hero section */
@@ -129,9 +135,15 @@ nav a:hover {
     opacity: 0.9;
 }
 
-.btn.pulse { /* Используем класс pulse */
-    animation: pulse 1.7s infinite; /* Немного изменим время анимации */
-    box-shadow: 0 6px 12px rgba(250, 204, 21, 0.5); /* Более заметная тень пульсации */
+.btn {
+    transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    background-color: #eab308; /* Яркий жёлтый */
+    color: #fff;
 }
 
 .countdown {
