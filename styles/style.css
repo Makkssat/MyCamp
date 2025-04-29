@@ -1,494 +1,560 @@
+/* Общие стили */
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
 body {
-  font-family: 'Rubik', sans-serif;
-  line-height: 1.6;
-  background-color: #f9fafb;
-  color: #111827;
+    font-family: 'Rubik', sans-serif;
+    line-height: 1.6;
+    background-color: #f9fafb;
+    color: #111827;
 }
 
 .container {
-  max-width: 1200px;
-  margin: auto;
-  padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
 }
 
+/* Стили для header */
 header {
-  background-color: #1e3a8a;
-  color: white;
-  padding: 15px 0;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    background-color: rgba(30, 58, 138, 0.95); /* Чуть более насыщенный и менее прозрачный */
+    color: white;
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+    transition: background-color 0.3s ease-in-out, padding 0.3s ease-in-out;
 }
 
-.logo {
-  font-size: 24px;
-  font-weight: 700;
-  margin-right: auto;
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-header .container {
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
+.logo a {
+    font-size: 28px; /* Увеличим размер логотипа */
+    font-weight: 700;
+    color: white;
+    text-decoration: none;
+}
+
+.burger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.burger-line {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: white;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.burger.open .burger-line:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+
+.burger.open .burger-line:nth-child(2) {
+    opacity: 0;
+}
+
+.burger.open .burger-line:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
 }
 
 nav {
-  display: flex;
-  gap: 20px;
-  align-items: center;
+    display: flex;
+    gap: 25px; /* Увеличим отступ между ссылками */
+    align-items: center;
 }
 
 nav a {
-  color: white;
-  text-decoration: none;
-  font-weight: 500;
-  transition: 0.3s;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease-in-out;
 }
 
 nav a:hover {
-  color: #facc15;
+    color: #fcd34d; /* Более светлый оттенок желтого */
 }
 
-.btn-login {
-  background: #facc15;
-  color: #1e3a8a;
-  padding: 8px 15px;
-  border: none;
-  border-radius: 8px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: 0.3s;
+.btn-primary { /* Новый класс для основной кнопки */
+    background: #fcd34d;
+    color: #1e3a8a;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.btn-login:hover {
-  background: #eab308;
+.btn-primary:hover {
+    background: #eab308;
+    color: white;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
 }
 
 /* Hero section */
 .hero {
-  background: linear-gradient(to right, #1e3a8a, #2563eb);
-  color: white;
-  padding: 100px 20px;
-  text-align: center;
+    background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%); /* Более динамичный градиент */
+    color: white;
+    padding: 120px 20px; /* Увеличим отступ */
+    text-align: center;
+    position: relative; /* Для позиционирования фоновых элементов */
+    overflow: hidden; /* Скроем выходящие за границы элементы */
 }
 
 .hero h2 {
-  font-size: 48px;
-  margin-bottom: 20px;
+    font-size: 52px; /* Увеличим размер заголовка */
+    margin-bottom: 25px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Добавим тень */
 }
 
 .hero p {
-  font-size: 20px;
-  margin-bottom: 30px;
+    font-size: 22px; /* Увеличим размер параграфа */
+    margin-bottom: 35px;
+    opacity: 0.9;
 }
 
-.btn {
-  background: #facc15;
-  color: #1e3a8a;
-  padding: 12px 25px;
-  border-radius: 8px;
-  font-weight: bold;
-  text-decoration: none;
-  transition: 0.3s;
-}
-
-.btn:hover {
-  background: #eab308;
+.btn.pulse { /* Используем класс pulse */
+    animation: pulse 1.7s infinite; /* Немного изменим время анимации */
+    box-shadow: 0 6px 12px rgba(250, 204, 21, 0.5); /* Более заметная тень пульсации */
 }
 
 .countdown {
-  margin-top: 20px;
-  font-size: 18px;
+    margin-top: 30px;
+    font-size: 20px;
+    font-weight: 500;
+    opacity: 0.8;
 }
 
 /* Features */
 .features {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
-  justify-content: center;
-  padding: 60px 20px;
-  background: #fff;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    padding: 60px 20px;
+    background: #f7fafc; /* Более светлый фон */
 }
 
 .features .card {
-  background: #e0f2fe;
-  padding: 25px;
-  border-radius: 12px;
-  flex: 1 1 300px;
-  max-width: 350px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    background: #fff; /* Белый фон карточек */
+    padding: 30px; /* Увеличим отступы */
+    border-radius: 15px;
+    flex: 1 1 320px;
+    max-width: 380px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Более выразительная тень */
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.features .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
 }
 
 .features .card h3 {
-  margin-bottom: 15px;
+    margin-bottom: 15px;
+    color: #1e3a8a; /* Цвет заголовков */
+}
+
+.features .card h4 {
+    color: #374151;
+    font-weight: normal;
+    margin-bottom: 20px;
 }
 
 .features .card ul {
-  list-style-type: disc;
-  padding-left: 20px;
+    list-style-type: disc;
+    padding-left: 20px;
+    color: #4b5563;
 }
 
 /* Направления */
 .nap {
-  text-align: center;
-  font-size: 36px;
-  padding-top: 60px;
-  margin-bottom: 20px;
+    text-align: center;
+    font-size: 40px; /* Увеличим размер заголовка */
+    padding-top: 70px; /* Увеличим отступ */
+    margin-bottom: 30px;
+    color: #1e3a8a;
 }
 
 .camp-directions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-  padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px; /* Увеличим отступ */
+    justify-content: center;
+    padding: 30px 20px;
 }
 
 .direction-card {
-  background: #f1f5f9;
-  padding: 20px;
-  border-radius: 16px;
-  flex: 1 1 240px;
-  text-align: center;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.07);
-  position: relative;
-  transition: transform 0.3s;
+    background: white; /* Белый фон для лучшей контрастности */
+    padding: 25px;
+    border-radius: 18px;
+    flex: 1 1 260px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08); /* Более заметная тень */
+    position: relative;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 .direction-card:hover {
-  transform: translateY(-5px);
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
 }
 
 .badge {
-  position: absolute;
-  top: -12px;
-  left: 12px;
-  background: #3b82f6;
-  color: white;
-  padding: 6px 12px;
-  border-radius: 12px;
-  font-weight: bold;
+    position: absolute;
+    top: -10px;
+    left: 15px;
+    background: #3b82f6;
+    color: white;
+    padding: 8px 14px;
+    border-radius: 15px;
+    font-weight: bold;
+    font-size: 14px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .icon {
-  font-size: 40px;
-  margin: 20px 0;
+    font-size: 48px; /* Увеличим размер иконок */
+    margin: 25px 0;
+    color: #2563eb;
 }
 
 .more {
-  font-size: 14px;
-  color: #6b7280;
-  font-style: italic;
+    font-size: 16px; /* Увеличим размер подписи */
+    color: #6b7280;
+    font-style: italic;
 }
 
 .desc {
-  margin-top: 10px;
-  font-size: 16px;
+    margin-top: 15px;
+    font-size: 18px; /* Увеличим размер описания */
+    color: #374151;
 }
 
 /* Галерея */
 .gallery {
-  padding: 60px 20px;
-  background: #fff;
-  text-align: center;
+    padding: 70px 20px;
+    background: #f7fafc;
+    text-align: center;
 }
 
 .gallery h2 {
-  font-size: 36px;
-  margin-bottom: 30px;
+    font-size: 40px; /* Увеличим размер заголовка */
+    margin-bottom: 40px;
+    color: #1e3a8a;
 }
 
 .photos {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
-  justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Увеличим отступ */
+    justify-content: center;
 }
 
 .photos img {
-  width: 300px;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 10px;
-  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease;
+    width: 320px; /* Немного увеличим размер */
+    height: 220px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 .photos img:hover {
-  transform: scale(1.05);
+    transform: scale(1.03);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
 }
 
 /* Тарифы */
 .pricing {
-  padding: 60px 20px;
-  background: #e0f2fe;
-  text-align: center;
+    padding: 70px 20px;
+    background: #e0f2fe;
+    text-align: center;
 }
 
 .tarif {
-  font-size: 36px;
-  margin-bottom: 30px;
+    font-size: 40px; /* Увеличим размер заголовка */
+    margin-bottom: 40px;
+    color: #1e3a8a;
 }
 
 .pricing-cards {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px; /* Увеличим отступ */
 }
 
 .pricing-card {
-  background: #ffffff;
-  padding: 25px;
-  border-radius: 16px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-  flex: 1 1 280px;
-  max-width: 350px;
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    flex: 1 1 300px;
+    max-width: 380px;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.pricing-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.pricing-card.premium {
+    background: #f0f9ff; /* Светло-голубой оттенок для выделения */
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
 }
 
 .pricing-card h3 {
-  margin-bottom: 10px;
+    margin-bottom: 15px;
+    color: #2563eb;
+    font-size: 24px;
 }
 
 .pricing-card .price {
-  font-size: 28px;
-  font-weight: bold;
-  color: #2563eb;
-  margin-bottom: 15px;
+    font-size: 32px;
+    font-weight: bold;
+    color: #3b82f6;
+    margin-bottom: 20px;
 }
 
 .pricing-card ul {
-  list-style: none;
-  text-align: left;
-  padding: 0;
-  margin: 0 0 20px 0;
+    list-style: none;
+    text-align: left;
+    padding: 0;
+    margin: 0 0 25px 0;
+    color: #4b5563;
 }
 
 .pricing-card ul p {
-  font-weight: bold;
+    font-weight: bold;
+    color: #1e3a8a;
+    margin-bottom: 5px;
 }
 
 .pricing-card hr {
-  margin: 5px 0 10px 0;
+    margin: 8px 0 12px 0;
+    border-color: #e0f2fe;
+}
+
+.pricing-card ul li {
+    padding-left: 20px;
+    position: relative;
+    margin-bottom: 8px;
+}
+
+.pricing-card ul li::before {
+    content: '✔';
+    color: #38b000;
+    position: absolute;
+    left: 0;
 }
 
 /* Форма */
 .form-section {
-  padding: 60px 20px;
-  text-align: center;
-  background: #f9fafb;
+    padding: 70px 20px;
+    text-align: center;
+    background: #f7fafc;
+}
+
+.form-section h2 {
+    font-size: 40px; /* Увеличим размер заголовка */
+    margin-bottom: 40px;
+    color: #1e3a8a;
 }
 
 .form-section form {
-  max-width: 500px;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
+    max-width: 500px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Увеличим отступ */
 }
 
 .form-section input,
 .form-section textarea {
-  padding: 10px;
-  border: 1px solid #cbd5e1;
-  border-radius: 8px;
-  font-size: 16px;
+    padding: 12px;
+    border: 1px solid #e0f2fe;
+    border-radius: 10px;
+    font-size: 16px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
 
 .form-section button {
-  padding: 12px;
-  background: #2563eb;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  font-size: 16px;
-  cursor: pointer;
-  font-weight: bold;
-  transition: background 0.3s;
+    padding: 14px;
+    background: #3b82f6;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .form-section button:hover {
-  background: #1e40af;
+    background: #2563eb;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
 }
 
 /* Footer */
 .footer {
-  background: #1e3a8a;
-  color: white;
-  padding: 40px 20px;
+    background: #1e3a8a;
+    color: #e0f2fe; /* Более светлый цвет текста */
+    padding: 50px 20px;
 }
 
 .footer-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 40px;
 }
 
-.footer-left {
-  flex: 1 1 300px;
+.footer-left p {
+    opacity: 0.8;
+    margin-bottom: 10px;
 }
 
 .footer-left blockquote {
-  margin: 15px 0;
-  font-style: italic;
-  opacity: 0.8;
+    margin: 20px 0;
+    font-style: italic;
+    opacity: 0.9;
+    border-left: 3px solid #fcd34d; /* Добавим акцентную линию */
+    padding-left: 15px;
 }
 
 .footer-right {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  flex: 1 1 200px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .footer-right a {
-  color: #facc15;
-  text-decoration: none;
-  font-weight: bold;
-  transition: 0.3s;
+    color: #fcd34d;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
 }
 
 .footer-right a:hover {
-  color: #fcd34d;
+    color: #fff;
 }
 
 /* Адаптивность */
 @media (max-width: 768px) {
-  nav {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
+    .header-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 20px;
+    }
 
-  .features {
-    flex-direction: column;
-    align-items: center;
-  }
+    nav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px; /* Высота хедера */
+        left: 0;
+        width: 100%;
+        background-color: #1e3a8a;
+        padding: 20px;
+        gap: 15px;
+        align-items: flex-start;
+    }
 
-  .pricing-cards,
-  .camp-directions {
-    flex-direction: column;
-    align-items: center;
-  }
+    nav.show {
+        display: flex;
+    }
 
-  .footer-container {
-    flex-direction: column;
-    text-align: center;
-  }
+    nav a {
+        padding: 10px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        width: 100%;
+    }
+
+    nav .btn-primary {
+        width: 100%;
+        text-align: center;
+    }
+
+    .burger {
+        display: flex;
+    }
+
+    .features {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .pricing-cards,
+    .camp-directions,
+    .photos {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .photos img {
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-left,
+    .footer-right {
+        align-items: center;
+    }
 }
 
-.btn {
-  background: #facc15;
-  color: #1e3a8a;
-  padding: 12px 25px;
-  border-radius: 8px;
-  font-weight: bold;
-  text-decoration: none;
-  transition: 0.3s;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-  position: relative;
-  z-index: 1;
-}
-
-.btn:hover {
-  background: #eab308;
-  color: white;
-  transform: scale(1.05);
-}
-
-.btn.pulse {
-  animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-  0% {
-    box-shadow: 0 0 0 0 rgba(250, 204, 21, 0.7);
-  }
-  70% {
-    box-shadow: 0 0 0 15px rgba(250, 204, 21, 0);
-  }
-  100% {
-    box-shadow: 0 0 0 0 rgba(250, 204, 21, 0);
-  }
-}
-
-
+/* Дополнительные стили для camp-stats (если вы их используете) */
 .camp-stats {
-  background: #eff6ff;
-  padding: 50px 20px;
-  text-align: center;
+    background: #eff6ff;
+    padding: 60px 20px;
+    text-align: center;
 }
 
 .stats-container {
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-  flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
 }
 
 .stat h3 {
-  font-size: 48px;
-  color: #2563eb;
-  margin-bottom: 10px;
+    font-size: 56px;
+    color: #2563eb;
+    margin-bottom: 10px;
 }
 
 .stat p {
-  font-size: 16px;
-  color: #374151;
-}
-
-.burger {
-  display: none;
-  font-size: 28px;
-  background: none;
-  border: none;
-  color: white;
-  cursor: pointer;
-}
-
-@media (max-width: 768px) {
-  header .container {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .burger {
-    display: block;
-    margin-left: auto;
-    margin-right: 20px;
-  }
-
-  nav {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    background: #1e3a8a;
-    padding: 10px 20px;
-    gap: 10px;
-  }
-
-  nav.show {
-    display: flex;
-  }
-
-  nav a {
-    padding: 10px 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  }
-
-  .btn-login {
-    align-self: flex-start;
-  }
+    font-size: 18px;
+    color: #374151;
 }
