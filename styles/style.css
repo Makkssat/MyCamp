@@ -115,35 +115,68 @@ nav a:hover {
 
 /* Hero section */
 .hero {
-    background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%); /* Более динамичный градиент */
+    background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
     color: white;
-    padding: 120px 20px; /* Увеличим отступ */
+    padding: 120px 20px;
     text-align: center;
-    position: relative; /* Для позиционирования фоновых элементов */
-    overflow: hidden; /* Скроем выходящие за границы элементы */
+    position: relative;
+    overflow: hidden;
 }
 
 .hero h2 {
-    font-size: 52px; /* Увеличим размер заголовка */
+    font-size: 52px;
     margin-bottom: 25px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Добавим тень */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .hero p {
-    font-size: 22px; /* Увеличим размер параграфа */
+    font-size: 22px;
     margin-bottom: 35px;
     opacity: 0.9;
 }
 
-.btn {
-    transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
-    cursor: pointer;
+.hero-btn {
+    position: relative;
+    display: inline-block;
+    padding: 15px 30px;
+    text-decoration: none;
+    color: #fcd34d;
+    background: transparent;
+    border: 2px solid #fcd34d;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    overflow: hidden;
+    transition: color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    z-index: 1;
 }
 
-.btn:hover {
-    transform: scale(1.05);
-    background-color: #eab308; /* Яркий жёлтый */
-    color: #fff;
+.hero-btn:hover {
+    color: #1e3a8a;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.hero-btn .btn-text {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-btn .wave {
+    position: absolute;
+    background: #fcd34d;
+    border-radius: 50%;
+    width: 0;
+    height: 0;
+    transition: width 0.5s ease-out, height 0.5s ease-out, opacity 0.5s ease-out;
+    transform: translate(-50%, -50%);
+    opacity: 0.6;
+    z-index: 1;
+}
+
+.hero-btn:hover .wave {
+    width: 200%;
+    height: 200%;
+    opacity: 1;
 }
 
 .countdown {
@@ -152,7 +185,6 @@ nav a:hover {
     font-weight: 500;
     opacity: 0.8;
 }
-
 /* Features */
 .features {
     display: flex;
