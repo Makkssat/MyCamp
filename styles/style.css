@@ -388,3 +388,21 @@ nav a:hover {
     text-align: center;
   }
 }
+
+/* Общий стиль для всех кнопок */
+.btn,
+.btn-login,
+button {
+  transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+}
+
+/* Эффект при наведении */
+.btn:hover,
+.btn-login:hover,
+button:hover {
+  transform: scale(1.05);
+  background-color: #eab308; /* Яркий жёлтый */
+  color: #fff;
+}
+
