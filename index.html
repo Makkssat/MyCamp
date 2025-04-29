@@ -1,284 +1,283 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>MyCamp — Лагерь будущего</title>
-  <link rel="stylesheet" href="./styles/style.css">
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
-
-  <!-- AOS CSS -->
-  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>MyCamp — Лагерь будущего</title>
+    <meta name="description" content="Инновационная система организации школьных смен для развития лидерства, науки, творчества и технологий у детей 7-13 лет.">
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="icon" href="./img/favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
 </head>
 <body>
 
-  <header data-aos="fade-down">
-    <div class="logo">MyCamp</div>
+    <header data-aos="fade-down">
+        <div class="container header-container">
+            <div class="logo"><a href="#">MyCamp</a></div>
+            <button class="burger" id="burger-btn" aria-label="Toggle menu">
+                <span class="burger-line"></span>
+                <span class="burger-line"></span>
+                <span class="burger-line"></span>
+            </button>
+            <nav id="nav-menu">
+                <a href="#about">О нас</a>
+                <a href="#nap">Направления</a>
+                <a href="#gallery">Галерея</a>
+                <a href="#pricing">Тарифы</a>
+                <a href="#contact" class="btn btn-primary">Записаться</a>
+            </nav>
+        </div>
+    </header>
 
-<button class="burger" id="burger-btn" aria-label="Toggle menu">
-  ☰
-</button>
+    <section class="hero" data-aos="fade-up">
+        <h2>Лагерь будущего</h2>
+        <p>Готовая система интересных школьных смен</p>
+        <a href="#form" class="btn pulse">Узнать больше</a>
+        <div class="countdown">До старта смены: <span id="timer">36 дней</span></div>
+    </section>
 
-<nav id="nav-menu">
-  <a href="#about">О нас</a>
-  <a href="#nap">Направления</a>
-  <a href="#gallery">Галерея</a>
-  <a href="#pricing">Тарифы</a>
-  <a href="#contact" class="btn-login">Записаться</a>
-</nav>
+    <section id="about" class="features">
+        <div class="card quote" data-aos="fade-left">
+            <h3>Готовая система школьных смен —</h3>
+            <h4>это организация учебного процесса, при которой ученики разных классов или групп приходят в школу в разные временные промежутки, что позволяет оптимизировать использование школьных помещений и ресурсов.</h4>
+        </div>
+        <div class="card" data-aos="fade-right">
+            <h3>Что входит</h3>
+            <ul>
+                <li>5 смен: лидерство, наука, английский, творчество и будущее</li>
+                <li>Карточки заданий и активностей</li>
+                <li>Методичка и расписание для учителя</li>
+                <li>Таблица достижений команд</li>
+                <li>Поддержка: видео, инструкции, сопровождение</li>
+            </ul>
+        </div>
+        <div class="card" data-aos="fade-up">
+            <h3>Почему это удобно</h3>
+            <ul>
+                <li>Работает даже в школах без техники</li>
+                <li>Для детей 7–13 лет</li>
+                <li>Базовый и расширенный пакеты</li>
+                <li>Масштабируется на любую школу</li>
+            </ul>
+        </div>
+    </section>
 
-  </header>
+    <h2 id="nap" class="nap">Направления</h2>
+    <section class="camp-directions">
+        <div class="direction-card">
+            <div class="badge badge-1">01</div>
+            <div class="icon">🤝</div>
+            <h3>Лидерство</h3>
+            <p class="more">Подробнее —</p>
+            <p class="desc">Развиваем уверенность, лидерские качества и навыки работы в команде.</p>
+        </div>
+        <div class="direction-card">
+            <div class="badge badge-2">02</div>
+            <div class="icon">🔬</div>
+            <h3>Наука</h3>
+            <p class="more">Подробнее —</p>
+            <p class="desc">Эксперименты, исследования, познание мира в стиле STEM.</p>
+        </div>
+        <div class="direction-card">
+            <div class="badge badge-3">03</div>
+            <div class="icon">🗣️</div>
+            <h3>Английский язык</h3>
+            <p class="more">Подробнее —</p>
+            <p class="desc">Speaking, игры, квесты и живое общение на английском каждый день.</p>
+        </div>
+        <div class="direction-card">
+            <div class="badge badge-4">04</div>
+            <div class="icon">🎨</div>
+            <h3>Творчество</h3>
+            <p class="more">Подробнее —</p>
+            <p class="desc">Театр, музыка, дизайн, сторителлинг — всё, чтобы раскрыть талант.</p>
+        </div>
+        <div class="direction-card">
+            <div class="badge badge-5">05</div>
+            <div class="icon">💡</div>
+            <h3>Технологии</h3>
+            <p class="more">Подробнее —</p>
+            <p class="desc">Основы ИИ, создание приложений и сайтов, цифровые проекты.</p>
+        </div>
+    </section>
 
-  <section class="hero" data-aos="fade-up">
-    <h2>Лагерь будущего</h2>
-    <p>Готовая система интересных школьных смен</p>
-    <a href="#form" class="btn pulse">Узнать больше</a>
-    <div class="countdown">До старта смены: <span id="timer">36 дней</span></div>
-  </section>
+    <section id="gallery" class="gallery" data-aos="fade-up">
+        <h2>Фотогалерея</h2>
+        <br>
+        <div class="photos">
+            <img src="./img/лагерь.jpg" alt="Фото 1">
+            <img src="./img/лагерь(1).jpg" alt="Фото 2">
+            <img src="./img/лагерь (2).jpg" alt="Фото 3">
+            <img src="./img/лагерь (3).jfif" alt="Фото 4">
+            <img src="./img/лагерь (4).jpg" alt="Фото 5">
+            <img src="./img/лагерь (5).jpg" alt="Фото 6">
+        </div>
+    </section>
 
-  <section id="about" class="features">
-    <div class="card quote" data-aos="fade-left">
-      <h3>Готовая система школьных смен —</h3>
-      <h4>это организация учебного процесса, при которой ученики разных классов или групп приходят в школу в разные временные промежутки, что позволяет оптимизировать использование школьных помещений и ресурсов.</h4>
-    </div>
-    <div class="card" data-aos="fade-right">
-      <h3>Что входит</h3>
-      <ul>
-        <li>5 смен: лидерство, наука, английский, творчество и будущее</li>
-        <li>Карточки заданий и активностей</li>
-        <li>Методичка и расписание для учителя</li>
-        <li>Таблица достижений команд</li>
-        <li>Поддержка: видео, инструкции, сопровождение</li>
-      </ul>
-    </div>
-    <div class="card" data-aos="fade-up">
-      <h3>Почему это удобно</h3>
-      <ul>
-        <li>Работает даже в школах без техники</li>
-        <li>Для детей 7–13 лет</li>
-        <li>Базовый и расширенный пакеты</li>
-        <li>Масштабируется на любую школу</li>
-      </ul>
-    </div>
-  </section>
+    <section id="pricing" class="pricing" data-aos="fade-up">
+        <h2 class="tarif">Тарифы</h2>
+        <div class="pricing-cards">
+            <div class="pricing-card">
+                <h3>Базовый</h3>
+                <div class="price">15 000 тг.</div>
+                <ul>
+                    <p>10 дней</p><hr>
+                    <li>Возрастная группа</li>
+                    <li>Выбранная смена</li>
+                    <li>Карточки с заданиями</li>
+                    <li>Методичка</li>
+                </ul>
+                <a href="#form" class="btn">Выбрать</a>
+            </div>
+            <div class="pricing-card premium">
+                <h3>Стандарт</h3>
+                <div class="price">25 000 тг.</div>
+                <ul>
+                    <p>10 дней</p><hr>
+                    <li>Возрастная группа</li>
+                    <li>Выбранная смена</li>
+                    <li>Карточки с заданиями</li>
+                    <li>Методичка</li>
+                    <li>Визуалы</li>
+                    <li>Таблицы Лидеров</li>
+                    <li>Шаблоны</li>
+                </ul>
+                <a href="#form" class="btn">Выбрать</a>
+            </div>
+            <div class="pricing-card premium">
+                <h3>PRO</h3>
+                <div class="price">40 000 тг.</div>
+                <ul>
+                    <p>10 дней</p><hr>
+                    <li>Возрастная группа</li>
+                    <li>Выбранная смена</li>
+                    <li>Карточки с заданиями</li>
+                    <li>Методичка</li>
+                    <li>Визуалы</li>
+                    <li>Таблицы Лидеров</li>
+                    <li>Шаблоны</li>
+                    <li>Адаптация под школу</li>
+                    <li>Видеопомощь</li>
+                    <li>Поддержка</li>
+                </ul>
+                <a href="#form" class="btn">Выбрать</a>
+            </div>
+        </div>
+    </section>
 
-  <h2 id="nap" class="nap">Направления</h2>
-  <section class="camp-directions">
-    <div class="direction-card">
-      <div class="badge badge-1">01</div>
-      <div class="icon">🤝</div>
-      <h3>Лидерство</h3>
-      <p class="more">Подробнее —</p>
-      <p class="desc">Развиваем уверенность, лидерские качества и навыки работы в команде.</p>
-    </div>
-    <div class="direction-card">
-      <div class="badge badge-2">02</div>
-      <div class="icon">🔬</div>
-      <h3>Наука</h3>
-      <p class="more">Подробнее —</p>
-      <p class="desc">Эксперименты, исследования, познание мира в стиле STEM.</p>
-    </div>
-    <div class="direction-card">
-      <div class="badge badge-3">03</div>
-      <div class="icon">🗣️</div>
-      <h3>Английский язык</h3>
-      <p class="more">Подробнее —</p>
-      <p class="desc">Speaking, игры, квесты и живое общение на английском каждый день.</p>
-    </div>
-    <div class="direction-card">
-      <div class="badge badge-4">04</div>
-      <div class="icon">🎨</div>
-      <h3>Творчество</h3>
-      <p class="more">Подробнее —</p>
-      <p class="desc">Театр, музыка, дизайн, сторителлинг — всё, чтобы раскрыть талант.</p>
-    </div>
-    <div class="direction-card">
-      <div class="badge badge-5">05</div>
-      <div class="icon">💡</div>
-      <h3>Технологии</h3>
-      <p class="more">Подробнее —</p>
-      <p class="desc">Основы ИИ, создание приложений и сайтов, цифровые проекты.</p>
-    </div>
-  </section>
+    <section class="camp-stats" data-aos="fade-up">
+        <div class="stats-container">
+            <div class="stat">
+                <h3>5+</h3>
+                <p>школ запустили MyCamp</p>
+            </div>
+            <div class="stat">
+                <h3>150+</h3>
+                <p>участников прошли смены</p>
+            </div>
+        </div>
+    </section>
 
-  <section id="gallery" class="gallery" data-aos="fade-up">
-    <h2>Фотогалерея</h2>
-    <br>
-    <div class="photos">
-      <img src="./img/лагерь.jpg" alt="Фото 1">
-      <img src="./img/лагерь(1).jpg" alt="Фото 2">
-      <img src="./img/лагерь (2).jpg" alt="Фото 3">
-      <img src="./img/лагерь (3).jfif" alt="Фото 4">
-      <img src="./img/лагерь (4).jpg" alt="Фото 5">
-      <img src="./img/лагерь (5).jpg" alt="Фото 6">
-    </div>
-  </section>
+    <section id="form" class="form-section" data-aos="fade-up">
+        <h2>Оставьте заявку</h2>
+        <br>
+        <form>
+            <input type="text" name="name" placeholder="Ваше имя" required>
+            <input type="email" name="email" placeholder="Ваш e-mail" required>
+            <textarea name="message" placeholder="Ваше сообщение"></textarea>
+            <button type="submit">Отправить</button>
+        </form>
+    </section>
 
-  <section id="pricing" class="pricing" data-aos="fade-up">
-    <h2 class="tarif">Тарифы</h2>
-    <div class="pricing-cards">
-      <div class="pricing-card">
-        <h3>Базовый</h3>
-        <div class="price">15 000 тг.</div>
-        <ul>
-          <p>10 дней</p><hr>
-          <li>Возрастная группа</li>
-          <li>Выбранная смена</li>
-          <li>Карточки с заданиями</li>
-          <li>Методичка</li>
-        </ul>
-        <a href="#form" class="btn">Выбрать</a>
-      </div>
-      <div class="pricing-card premium">
-        <h3>Стандарт</h3>
-        <div class="price">25 000 тг.</div>
-        <ul>
-          <p>10 дней</p><hr>
-          <li>Возрастная группа</li>
-          <li>Выбранная смена</li>
-          <li>Карточки с заданиями</li>
-          <li>Методичка</li>
-          <li>Визуалы</li>
-          <li>Таблицы Лидеров</li>
-          <li>Шаблоны</li>
-        </ul>
-        <a href="#form" class="btn">Выбрать</a>
-      </div>
-      <div class="pricing-card premium">
-        <h3>PRO</h3>
-        <div class="price">40 000 тг.</div>
-        <ul>
-          <p>10 дней</p><hr>
-          <li>Возрастная группа</li>
-          <li>Выбранная смена</li>
-          <li>Карточки с заданиями</li>
-          <li>Методичка</li>
-          <li>Визуалы</li>
-          <li>Таблицы Лидеров</li>
-          <li>Шаблоны</li>
-          <li>Адаптация под школу</li>
-          <li>Видеопомощь</li>
-          <li>Поддержка</li>
-        </ul>
-        <a href="#form" class="btn">Выбрать</a>
-      </div>
-    </div>
-  </section>
+    <footer class="footer" data-aos="fade-up">
+        <div class="footer-container">
+            <div class="footer-left">
+                <p>© 2025 MyCamp. Сделано с идеей.</p>
+                <p>👥 Посетителей: <span id="visit-counter">0</span></p>
+                <blockquote>“Я могу. У меня получается. Я не боюсь быть собой.”</blockquote>
+                <p>— Мамедов Руслан, CEO, 7 класс<br>— Рахматулла Максат, Front-end разработчик, 7 класс</p>
+            </div>
+            <div class="footer-right">
+                <a href="https://instagram.com/ruslanchik5733" target="_blank">📷 Instagram</a>
+                <a href="https://wa.me/+77076932425" target="_blank">💬 WhatsApp</a>
+                <a href="https://maps.google.com/?q=школа" target="_blank">📍 Локация</a>
+                <a href="tel:+77076932425">📞 +7 707 693 24 25</a>
+            </div>
+        </div>
+    </footer>
 
-  <section class="camp-stats" data-aos="fade-up">
-  <div class="stats-container">
-    <div class="stat">
-      <h3>5+</h3>
-      <p>школ запустили MyCamp</p>
-    </div>
-    <div class="stat">
-      <h3>150+</h3>
-      <p>участников прошли смены</p>
-    </div>
-  </div>
-</section>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000 });
 
-  <section id="form" class="form-section" data-aos="fade-up">
-    <h2>Оставьте заявку</h2>
-    <br>
-    <form>
-      <input type="text" name="name" placeholder="Ваше имя" required>
-      <input type="email" name="email" placeholder="Ваш e-mail" required>
-      <textarea name="message" placeholder="Ваше сообщение"></textarea>
-      <button type="submit">Отправить</button>
-    </form>
-  </section>
+        let views = localStorage.getItem("views") || 0;
+        views++;
+        localStorage.setItem("views", views);
+        document.getElementById("visit-counter").textContent = views;
+    </script>
 
-  <footer class="footer" data-aos="fade-up">
-    <div class="footer-container">
-      <div class="footer-left">
-        <p>© 2025 MyCamp. Сделано с идеей.</p>
-        <p>👥 Посетителей: <span id="visit-counter">0</span></p>
-        <blockquote>“Я могу. У меня получается. Я не боюсь быть собой.”</blockquote>
-        <p>— Мамедов Руслан, CEO, 7 класс<br>— Рахматулла Максат, Front-end разработчик, 7 класс</p>
-      </div>
-      <div class="footer-right">
-        <a href="https://instagram.com/ruslanchik5733" target="_blank">📷 Instagram</a>
-        <a href="https://wa.me/+77076932425" target="_blank">💬 WhatsApp</a>
-        <a href="https://maps.google.com/?q=школа" target="_blank">📍 Локация</a>
-        <a href="tel:+77076932425">📞 +7 707 693 24 25</a>
-      </div>
-    </div>
-  </footer>
+    <script>
+        const form = document.querySelector('form');
+        const submitButton = form.querySelector('button[type="submit"]');
 
-  <!-- AOS JS -->
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-  <script>
-    AOS.init({ duration: 1000 });
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
 
-    let views = localStorage.getItem("views") || 0;
-    views++;
-    localStorage.setItem("views", views);
-    document.getElementById("visit-counter").textContent = views;
-  </script>
+            submitButton.disabled = true;
+            submitButton.textContent = 'Отправляем...';
 
-  <script>
-    const form = document.querySelector('form');
-    const submitButton = form.querySelector('button[type="submit"]');
+            const name = form.name.value.trim();
+            const email = form.email.value.trim();
+            const message = form.message.value.trim();
 
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
+            const text = `📩 Новая заявка!%0A👤 Имя: ${name}%0A📧 Email: ${email}%0A📝 Сообщение: ${message}`;
+            const TOKEN = 'ВАШ_ТОКЕН'; // Вставьте свой токен Telegram бота
+            const CHAT_ID = 'ВАШ_CHAT_ID'; // Вставьте свой ID чата Telegram
+            const URL = `https://api.telegram.org/bot${TOKEN}/sendMessage?chat_id=${CHAT_ID}&text=${text}`;
 
-      submitButton.disabled = true;
-      submitButton.textContent = 'Отправляем...';
+            try {
+                const response = await fetch(URL);
+                if (response.ok) {
+                    showPopup('✅ Заявка успешно отправлена!');
+                    form.reset();
+                } else {
+                    showPopup('❌ Ошибка при отправке. Попробуйте позже.');
+                }
+            } catch {
+                showPopup('❌ Ошибка сети. Попробуйте позже.');
+            } finally {
+                submitButton.disabled = false;
+                submitButton.textContent = 'Отправить';
+            }
+        });
 
-      const name = form.name.value.trim();
-      const email = form.email.value.trim();
-      const message = form.message.value.trim();
-
-      const text = `📩 Новая заявка!%0A👤 Имя: ${name}%0A📧 Email: ${email}%0A📝 Сообщение: ${message}`;
-      const TOKEN = 'ВАШ_ТОКЕН';
-      const CHAT_ID = 'ВАШ_CHAT_ID';
-      const URL = `https://api.telegram.org/bot${TOKEN}/sendMessage?chat_id=${CHAT_ID}&text=${text}`;
-
-      try {
-        const response = await fetch(URL);
-        if (response.ok) {
-          showPopup('✅ Заявка успешно отправлена!');
-          form.reset();
-        } else {
-          showPopup('❌ Ошибка при отправке. Попробуйте позже.');
+        function showPopup(message) {
+            const popup = document.createElement('div');
+            popup.textContent = message;
+            Object.assign(popup.style, {
+                position: 'fixed',
+                top: '20px',
+                right: '20px',
+                background: '#3b82f6',
+                color: 'white',
+                padding: '15px 20px',
+                borderRadius: '12px',
+                fontWeight: 'bold',
+                boxShadow: '0 8px 20px rgba(0,0,0,0.2)',
+                zIndex: 9999
+            });
+            document.body.appendChild(popup);
+            setTimeout(() => popup.remove(), 3000);
         }
-      } catch {
-        showPopup('❌ Ошибка сети. Попробуйте позже.');
-      } finally {
-        submitButton.disabled = false;
-        submitButton.textContent = 'Отправить';
-      }
-    });
 
-    function showPopup(message) {
-      const popup = document.createElement('div');
-      popup.textContent = message;
-      Object.assign(popup.style, {
-        position: 'fixed',
-        top: '20px',
-        right: '20px',
-        background: '#2563eb',
-        color: 'white',
-        padding: '15px 20px',
-        borderRadius: '12px',
-        fontWeight: 'bold',
-        boxShadow: '0 8px 20px rgba(0,0,0,0.2)',
-        zIndex: 9999
-      });
-      document.body.appendChild(popup);
-      setTimeout(() => popup.remove(), 3000);
-    }
+        const burger = document.getElementById('burger-btn');
+        const navMenu = document.getElementById('nav-menu');
 
-      const burger = document.getElementById('burger-btn');
-  const navMenu = document.getElementById('nav-menu');
-
-  burger.addEventListener('click', () => {
-    navMenu.classList.toggle('show');
-  });
-  </script>
+        burger.addEventListener('click', () => {
+            navMenu.classList.toggle('show');
+            burger.classList.toggle('open');
+        });
+    </script>
 </body>
 </html>
