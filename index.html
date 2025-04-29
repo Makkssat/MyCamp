@@ -272,6 +272,13 @@
       document.body.appendChild(popup);
       setTimeout(() => popup.remove(), 3000);
     }
+
+      const burger = document.getElementById('burger-btn');
+  const navMenu = document.getElementById('nav-menu');
+
+  burger.addEventListener('click', () => {
+    navMenu.classList.toggle('show');
+  });
   </script>
 </body>
 </html>
