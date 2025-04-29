@@ -225,7 +225,58 @@ nav a:hover {
     list-style-type: disc;
     padding-left: 20px;
     color: #4b5563;
+}/* Стили для секции скачивания презентации  */
+.download-presentation {
+    background: #f0f9ff; /* Светло-голубой фон  */
+    padding: 60px 20px;
+    text-align: center;
 }
+
+.download-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.download-presentation h2 {
+    font-size: 32px;
+    color: #1e3a8a;
+    margin-bottom: 20px;
+}
+
+.download-presentation p {
+    font-size: 18px;
+    color: #374151;
+    margin-bottom: 30px;
+}
+
+.download-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: #4CAF50; /* Зеленый  */
+    color: white;
+    padding: 14px 28px; /* Немного больше отступы  */
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.download-button:hover {
+    background-color: #45a049; /* Темнее при наведении  */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.download-icon {
+    font-size: 24px;
+}
+
+
 
 /* Направления */
 .nap {
